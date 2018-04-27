@@ -11,8 +11,9 @@
           <span class="sr-only">(current)</span>
         </a>
       </li>
+      <!-- DropDown of Produts -->
       <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" (click)="style.hide()" mdbRippleRadius>
+        <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" (click)="style.hide()" mdbRippleRadius>
           Store
           <span class="caret"></span>
         </a>
@@ -33,19 +34,35 @@
         <a routerLink="/contact" class="nav-link">Contact</a>
       </li>
 
-
       <li class="nav-item waves-light" mdbRippleRadius>
-        <a class="nav-link" (click)="form.show()" *ngIf="!logged; else isLogged" mdbRippleRadius>Login</a>
-        <ng-template #isLogged>
-          <a class="nav-link" mdbRippleRadius routerLink="/user_settings">User settings</a>
-        </ng-template>
+        <a routerLink="/cart" class="nav-link" >Cart</a>
       </li>
 
-      <li class="nav-item waves-light" mdbRippleRadius>
-        <a routerLink="/cart" class="nav-link" href="#">Cart</a>
-      </li>
 
+
+
+      <!-- DropDown of user_settings -->
+     <div class="float-right">
+        <li class="nav-item waves-light" mdbRippleRadius>
+            <a class="nav-link" (click)="form.show()" *ngIf="!logged; else isLogged" mdbRippleRadius>Login</a>
+            <ng-template #isLogged>
+                <li class="nav-item dropdown" dropdown>
+                    <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" (click)="style.hide()" mdbRippleRadius>
+                      User settings
+                      <span class="caret"></span>
+                    </a>
+                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                      <a class="nav-link" mdbRippleRadius routerLink="/user_settings">User settings</a>
+                      <a class="dropdown-item waves-light" routerLink="" (click)="onLogOut()" mdbRippleRadius>Log Out</a>
+                    </div> 
+                  </li>        
+            </ng-template>
+          </li>
+     </div>
     </ul>
+     
+     
+
     <form class="form-inline waves-light" mdbRippleRadius>
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
     </form>

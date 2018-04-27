@@ -46,9 +46,14 @@ export class AppComponent {
     if (this.checkCredentials() === 1) {
       this.logged = true;
       this.err = '';
+      localStorage.setItem('logged', this.logged.toString());
     } else if (this.checkCredentials() === 2) {
         this.err = 'Incorrect credential';
     }
+  }
+  onLogOut() {
+    this.logged = false;
+    localStorage.removeItem('logged');
   }
   ngOnInit() {
     this.newService.GetUser().subscribe(data => this.title = data[0].title);

@@ -1,43 +1,63 @@
-
 <div class="bg">
   <br>
   <br>
   <br>
   <br>
   <div class="row verticalcenter animated rollIn">
-  <!-- Material form login -->
-  <div class="col"></div>
-
-  <!-- Material form register -->
-  <form>
-      <p class="h4 text-center mb-4 white-text">Sign up</p>
-
+    <!-- Material form login -->
+    <div class="col"></div>
+    <div class="col">
+      <!-- Material form register -->
+      <p class="h2 text-center mb-4 white-text">Sign up</p>
+      <br>
       <!-- Material input text -->
       <div class="md-form">
-          <i class="fa fa-user prefix white-text"></i>
-          <input type="text" placeholder="Name" class="form-control">
+        <i class="fa fa-user prefix white-text"></i>
+        <input type="text" placeholder="First Name"[(ngModel)]="tempFirstName" class="form-control">
       </div>
+      <br>
+      <!-- Material input text -->
+      <!-- Material input text -->
+      <div class="md-form">
+        <i class="fa fa-user prefix white-text"></i>
+        <input type="text" placeholder="Last Name" [(ngModel)]="tempLastName" class="form-control">
+      </div>
+      <br>
+      <div class="md-form">
+        <i class="fa fa-calendar prefix white-text"></i>
+        <input type="date" [(ngModel)]="tempDate" class="form-control">
+      </div>
+      <br>
+      <!-- Material input text -->
+      <!-- Material input text -->
+      <div class="md-form">
+        <i class="fa fa-phone prefix white-text"></i>
+        <input type="text" placeholder="Phone Number" [(ngModel)]="tempPhone" class="form-control">
+      </div>
+      <br>
       <!-- Material input text -->
 
       <!-- Material input email -->
       <div class="md-form">
-          <i class="fa fa-envelope prefix white-text"></i>
-          <input type="email" placeholder="Email" class="form-control">
+        <i class="fa fa-envelope prefix white-text"></i>
+        <input type="email" placeholder="Email" [(ngModel)]="tempEmail" class="form-control">
       </div>
-
+      <br>
       <!-- Material input password -->
       <div class="md-form">
-          <i class="fa fa-lock prefix white-text"></i>
-          <input type="password" placeholder="Password" class="form-control ">
+        <i class="fa fa-lock prefix white-text"></i>
+        <input type="password" placeholder="Password" [(ngModel)]="tempPassword" class="form-control">
       </div>
-
+      <br>
       <div class="text-center mt-4">
-          <button class="btn btn-primary" type="submit">Register</button>
+        <button class="btn btn-primary" (click)="onInsertUser()">Register</button>
       </div>
-  </form>
-  <!-- Material form register -->
 
-   <div class="col"></div>
+      <!-- Material form register -->
+    </div>
+
+
+    <div class="col"></div>
   </div>
 
 </div>

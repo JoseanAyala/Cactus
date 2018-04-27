@@ -33,6 +33,7 @@ export class AppComponent {
 
   constructor(private newService: CommonService) {
     // console.log(this.Repdata);
+    this.logged = localStorage.getItem('logged') === 'true';
   }
   checkCredentials() {
     if (this.checkEmail === this.credential[0].checkEmail && this.checkPass === this.credential[0].checkPassword) {
